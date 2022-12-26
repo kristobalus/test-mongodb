@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  mongodb:
+    image: mongo:5.0.6
+    container_name: test-mondogb
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:27017:27017"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data:
+
